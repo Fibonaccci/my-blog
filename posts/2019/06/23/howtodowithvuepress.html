@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>搭建个人技术博客使用 VuePress 和 GitHub Pages | Fibonaccci</title>
+    <meta name="description" content="技术博客 Powered by Vuepress">
+    
+    
+    <link rel="preload" href="/my-blog/assets/css/0.styles.8d1b4f4c.css" as="style"><link rel="preload" href="/my-blog/assets/js/app.e20c6566.js" as="script"><link rel="preload" href="/my-blog/assets/js/6.35f30039.js" as="script"><link rel="preload" href="/my-blog/assets/js/14.430b5071.js" as="script"><link rel="prefetch" href="/my-blog/assets/js/1.5cc123c1.js"><link rel="prefetch" href="/my-blog/assets/js/10.6438e78f.js"><link rel="prefetch" href="/my-blog/assets/js/11.3e127917.js"><link rel="prefetch" href="/my-blog/assets/js/12.bd47b840.js"><link rel="prefetch" href="/my-blog/assets/js/13.1a07c04d.js"><link rel="prefetch" href="/my-blog/assets/js/15.0c636ad8.js"><link rel="prefetch" href="/my-blog/assets/js/16.bbea57e7.js"><link rel="prefetch" href="/my-blog/assets/js/17.a5adcbc8.js"><link rel="prefetch" href="/my-blog/assets/js/18.a8552b4e.js"><link rel="prefetch" href="/my-blog/assets/js/19.e4233f76.js"><link rel="prefetch" href="/my-blog/assets/js/20.5f571ee3.js"><link rel="prefetch" href="/my-blog/assets/js/21.da670133.js"><link rel="prefetch" href="/my-blog/assets/js/22.6a456edb.js"><link rel="prefetch" href="/my-blog/assets/js/3.80214660.js"><link rel="prefetch" href="/my-blog/assets/js/4.d95911f4.js"><link rel="prefetch" href="/my-blog/assets/js/5.17ec223c.js"><link rel="prefetch" href="/my-blog/assets/js/7.5be15f41.js"><link rel="prefetch" href="/my-blog/assets/js/8.91c97369.js"><link rel="prefetch" href="/my-blog/assets/js/9.d58230ba.js">
+    <link rel="stylesheet" href="/my-blog/assets/css/0.styles.8d1b4f4c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-0539f1bd><div data-v-39c72c19 data-v-0539f1bd><nav class="navbar" data-v-39c72c19><div class="container" data-v-39c72c19><a href="/my-blog/" class="router-link-active" data-v-39c72c19><span class="navbar-site-name" data-v-39c72c19>
+          Fibonaccci
+        </span></a> <div class="navbar-toggler" data-v-39c72c19><svg class="icon" style="font-size:1.2em;" data-v-39c72c19 data-v-39c72c19><title data-v-39c72c19 data-v-39c72c19>menu</title><use xlink:href="#icon-menu" data-v-39c72c19 data-v-39c72c19></use></svg></div> <div class="navbar-links" data-v-39c72c19><a href="/my-blog/" class="navbar-link" data-v-39c72c19>
+            主页
+          </a><a href="/my-blog/posts/" class="navbar-link router-link-active" data-v-39c72c19>
+            文章
+          </a><a href="/my-blog/custom-pages/" class="navbar-link" data-v-39c72c19>
+            关于
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-39c72c19></div></div> <div class="banner" data-v-98d6aa8c data-v-0539f1bd data-v-0539f1bd><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-0539f1bd>
+          搭建个人技术博客使用 VuePress 和 GitHub Pages
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6cd81e6a data-v-6cd81e6a><main class="main" data-v-6cd81e6a><div class="post" data-v-6cd81e6a data-v-6cd81e6a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-06-23
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/my-blog/posts/2019/06/22/posts.html" class="post-link" data-v-4e23451f>
+      上一篇 : 第一篇技术博客上的非技术文章
+    </a> <a href="/my-blog/posts/2019/06/30/_30-cssbasenote.html" class="post-link" data-v-4e23451f>
+      下一篇 : CSS 基础知识
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><blockquote><p>使用 VuePress 和 GitHub Pages 搭建个人博客</p></blockquote> <h2 id="什么是-vuepress-？"><a href="#什么是-vuepress-？" aria-hidden="true" class="header-anchor">#</a> 什么是 VuePress ？</h2> <blockquote><p><a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer">VuePress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 由两部分组成：一部分是支持用 <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>  开发主题的极简静态网站生成器，另一个部分是为书写技术文档而优化的默认主题。它的诞生初衷是为了支持 Vue 及其子项目的文档需求。</p></blockquote> <p>简单来说就是我们可以用它非常方便的生成简单的文档类型的静态页面。在 <a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer">GitHub VuePress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 有 13K+ ⭐️ ，也有开发者帮我们搭建好了一些基于 <a href="https://github.com/ulivz/awesome-vuepress" target="_blank" rel="noopener noreferrer">VuePress 的 Themes 和 Plugins<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 。今天我使用的就是其中一个 Theme <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" rel="noopener noreferrer">vuepress-theme-meteorlxy<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 。</p> <h2 id="搭建前准备"><a href="#搭建前准备" aria-hidden="true" class="header-anchor">#</a> 搭建前准备</h2> <ol><li>确保你的开发环境安装了 <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 同时版本号 &gt;= 8</li></ol> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#查看 Node.js 版本号</span>
+node -v
+</code></pre></div><ol start="2"><li>确保你有一个 <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的账号, 并在开发环境装有  <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>  ，且配置好对应的 <a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="noopener noreferrer">SSH Key<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ol> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#查看 Git 版本号</span>
+<span class="token function">git</span> --version
+</code></pre></div><ol start="3"><li><p>确保在你的 GitHub 上有一个可以存放博客页面的 Repository ，且配置好对应的 <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys" target="_blank" rel="noopener noreferrer">Deploy Key<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p>尽可能阅读一下 <a href="https://v1.vuepress.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer">VuePress 官方上手指南<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，不阅读不影响本次搭建</p></li></ol> <h2 id="搭建你的项目"><a href="#搭建你的项目" aria-hidden="true" class="header-anchor">#</a> 搭建你的项目</h2> <h3 id="新建项目、安装"><a href="#新建项目、安装" aria-hidden="true" class="header-anchor">#</a> 新建项目、安装</h3> <p>这里我使用的所 <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，也可以使用 <a href="https://yarnpkg.com/" target="_blank" rel="noopener noreferrer">Yarn<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#新建一个路径作为项目的根路径</span>
+<span class="token function">mkdir</span> vuepress-blog
+
+<span class="token comment">#cd 进去</span>
+<span class="token function">cd</span> vuepress-blog
+
+<span class="token comment">#初始化一个 node 项目</span>
+<span class="token function">npm</span> init
+
+<span class="token comment">#安装 VuePress vuepress-theme-meteorlxy</span>
+<span class="token function">npm</span> <span class="token function">install</span> -D vuepress vuepress-theme-meteorlxy
+</code></pre></div><blockquote><p>官方提醒，如果你的现有项目依赖了 webpack 3.x，推荐使用 Yarn 而不是 npm 来安装 VuePress。因为在这种情形下，npm 会生成错误的依赖树。</p></blockquote> <p>建立好如下的路径和文件，主题官方指南中使用 <code>src</code> 而不是 <code>docs</code> ，因为 GitHub Pages 要求使用 <code>docs</code> 路径，这里使用 <code>docs</code> ，两者没有实质差别。</p> <div class="language-sh extra-class"><pre class="language-sh"><code>vuepress-blog
+├── docs <span class="token comment"># Blog 源文件目录</span>
+│   ├── .vuepress <span class="token comment"># Vuepress 目录</span>
+│   │   └── config.js <span class="token comment"># Vuepress 配置文件</span>
+│   └── _posts <span class="token comment"># 博客文件夹</span>
+│       ├── xxx.md
+│       <span class="token punctuation">..</span>.
+└── package.json
+</code></pre></div><blockquote><p>注意，<code>docs/index.md</code> 或 <code>docs/README.md</code> 不是必须的，本主题会自动为你加上首页。</p></blockquote> <p>在 <code>package.json</code> 中加入 scripts 字段，在开发调试以及项目构建时会用到</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;docs:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;docs:build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="配置主题"><a href="#配置主题" aria-hidden="true" class="header-anchor">#</a> 配置主题</h3> <details><summary>在 docs\/.vuepress\/config.js 中配置 Vuepress 和主题，可以将以下代码（点击左侧三角打开）写入 config.js 后修改</summary> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// .vuepress/config.js</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+  base<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 网站 Title</span>
+  title<span class="token punctuation">:</span> <span class="token string">'My Blog'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 网站描述</span>
+  description<span class="token punctuation">:</span> <span class="token string">'This is my blog'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 网站语言</span>
+  locales<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'/'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      lang<span class="token punctuation">:</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 使用的主题</span>
+  theme<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 主题配置</span>
+  themeConfig<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 主题语言，参考下方 [主题语言] 章节</span>
+    lang<span class="token punctuation">:</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 个人信息（没有或不想设置的，删掉对应字段即可）</span>
+    personalInfo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 昵称</span>
+      nickname<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 个人简介</span>
+      description<span class="token punctuation">:</span> <span class="token string">'Happy Coding&lt;br/&gt;Happy Life'</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 电子邮箱</span>
+      email<span class="token punctuation">:</span> <span class="token string">'meteor.lxy@foxmail.com'</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 所在地</span>
+      location<span class="token punctuation">:</span> <span class="token string">'Xi\'an City, China'</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 组织</span>
+      organization<span class="token punctuation">:</span> <span class="token string">'Xi\'an Jiao Tong University'</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 头像</span>
+      <span class="token comment">// 设置为外部链接</span>
+      avatar<span class="token punctuation">:</span> <span class="token string">'https://www.meteorlxy.cn/assets/img/avatar.jpg'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 或者放置在 .vuepress/public 文件夹，例如 .vuepress/public/img/avatar.jpg</span>
+      <span class="token comment">// avatar: '/img/avatar.jpg',</span>
+      
+
+      <span class="token comment">// 社交平台帐号信息</span>
+      sns<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Github 帐号和链接</span>
+        github<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://github.com/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Facebook 帐号和链接</span>
+        facebook<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy.cn'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://www.facebook.com/meteorlxy.cn'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// LinkedIn 帐号和链接</span>
+        linkedin<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'http://www.linkedin.com/in/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Twitter 帐号和链接</span>
+        twitter<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy_cn'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://twitter.com/meteorlxy_cn'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// 新浪微博 帐号和链接</span>
+        weibo<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'@焦炭君_Meteor'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://weibo.com/u/2039655434'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// 知乎 帐号和链接</span>
+        zhihu<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy.cn'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://www.zhihu.com/people/meteorlxy.cn'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// 豆瓣 帐号和链接</span>
+        douban<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'159342708'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://www.douban.com/people/159342708'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Reddit 帐号和链接</span>
+        reddit<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://www.reddit.com/user/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Medium 帐号和链接</span>
+        medium<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy.cn'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://medium.com/@meteorlxy.cn'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Instagram 帐号和链接</span>
+        instagram<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy.cn'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://www.instagram.com/meteorlxy.cn'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// GitLab 帐号和链接</span>
+        gitlab<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://gitlab.com/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Bitbucket 帐号和链接</span>
+        bitbucket<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://bitbucket.org/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// Docker Hub 帐号和链接</span>
+        docker<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          account<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+          link<span class="token punctuation">:</span> <span class="token string">'https://hub.docker.com/u/meteorlxy'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 上方 header 的相关设置</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// header 的背景，可以使用图片，或者随机变化的图案（geopattern）</span>
+      background<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 使用图片的 URL，如果设置了图片 URL，则不会生成随机变化的图案，下面的 useGeo 将失效</span>
+        url<span class="token punctuation">:</span> <span class="token string">'/assets/img/bg.jpg'</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// 使用随机变化的图案，如果设置为 false，且没有设置图片 URL，将显示为空白背景</span>
+        useGeo<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 是否在 header 显示标题</span>
+      showTitle<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 是否显示文章的最近更新时间</span>
+    lastUpdated<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 顶部导航栏内容</span>
+    nav<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> text<span class="token punctuation">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span> link<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> exact<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> text<span class="token punctuation">:</span> <span class="token string">'文章'</span><span class="token punctuation">,</span> link<span class="token punctuation">:</span> <span class="token string">'/posts/'</span><span class="token punctuation">,</span> exact<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 评论配置，参考下方 [页面评论] 章节</span>
+    comments<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      owner<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span>
+      repo<span class="token punctuation">:</span> <span class="token string">'vuepress-theme-meteorlxy'</span><span class="token punctuation">,</span>
+      clientId<span class="token punctuation">:</span> <span class="token string">'MY_CLIENT_ID'</span><span class="token punctuation">,</span>
+      clientSecret<span class="token punctuation">:</span> <span class="token string">'MY_CLIENT_SECRET'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 分页配置</span>
+    pagination<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      perPage<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 默认页面（可选，默认全为 true）</span>
+    defaultPages<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 是否允许主题自动添加 Home 页面 (url: /)</span>
+      home<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">// 是否允许主题自动添加 Posts 页面 (url: /posts/)</span>
+      posts<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div></details> <h3 id="写第一篇博客"><a href="#写第一篇博客" aria-hidden="true" class="header-anchor">#</a> 写第一篇博客</h3> <p>在 _posts 下新建一个 markdown 文件，写入下面的内容</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token comment">&lt;!-- _posts/2019-06-22-hello-world.md --&gt;</span>
+
+<span class="token hr punctuation">---</span>
+category: hello
+tags:
+  <span class="token list punctuation">-</span> world
+date: 2019-06-23
+title: Hello, world!
+<span class="token title important">vssue-title: Hello, world!
+<span class="token punctuation">---</span></span>
+
+这是第一篇博文。
+
+more 上面的内容是摘要，将显示在目录中。
+
+<span class="token comment">&lt;!-- more --&gt;</span>
+
+more 下面的内容只有浏览这篇文章时才会完全展示，不会显示在目录中。
+</code></pre></div><h3 id="调试运行"><a href="#调试运行" aria-hidden="true" class="header-anchor">#</a> 调试运行</h3> <p>运行前文配置的 scripts</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> run docs:dev
+</code></pre></div><p>等待执行完毕后，在浏览器中输入 <code>http://localhost:8080</code> 即可查看到你的博客</p> <blockquote><p>此时，你可以尝试修改 <code>config.js</code> 的配置信息，比如 SNS 信息，以及你的 <code>_posts</code> 路径下的 markdown 文件，观察网页的变化。</p></blockquote> <h2 id="使用评论功能"><a href="#使用评论功能" aria-hidden="true" class="header-anchor">#</a> 使用评论功能</h2> <p>本主题通过 <a href="https://vssue.js.org/zh/" target="_blank" rel="noopener noreferrer">Vssue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 启用页面评论功能。</p> <h3 id="配置评论"><a href="#配置评论" aria-hidden="true" class="header-anchor">#</a> 配置评论</h3> <p>只有在 <code>_posts</code> 下的文章可以使用评论功能，其他地方不能使用
+默认使用 Github 平台来存储评论，可以查看 <a href="https://vssue.js.org/zh/guide/github.html" target="_blank" rel="noopener noreferrer">Vssue 官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 了解如何配置 <code>config.js</code> 中 <code>comments</code> 各个参数，此时需要使用到前面提前准备到的 Repository ：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 主题配置</span>
+  themeConfig<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 评论配置</span>
+    comments<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      platform<span class="token punctuation">:</span> <span class="token string">'github'</span><span class="token punctuation">,</span> <span class="token comment">// 可选，默认使用 'github'，还可以选择 'gitlab', 'bitbucket'。详情参考 Vssue 文档</span>
+      owner<span class="token punctuation">:</span> <span class="token string">'meteorlxy'</span><span class="token punctuation">,</span> <span class="token comment">// GitHub 的名字</span>
+      repo<span class="token punctuation">:</span> <span class="token string">'vuepress-theme-meteorlxy'</span><span class="token punctuation">,</span> <span class="token comment">// Repository 名字</span>
+      clientId<span class="token punctuation">:</span> <span class="token string">'MY_CLIENT_ID'</span><span class="token punctuation">,</span> <span class="token comment">// 在 GitHub 配置 Vssue 后给出</span>
+      clientSecret<span class="token punctuation">:</span> <span class="token string">'MY_CLIENT_SECRET'</span><span class="token punctuation">,</span> <span class="token comment">// 在 GitHub 配置 Vssue 后给出</span>
+      autoCreateIssue<span class="token punctuation">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'development'</span><span class="token punctuation">,</span> <span class="token comment">// 可选，这样设置可以在开发环境下不自动创建 Issue</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置完成后，博客评论将储存在你的 Github 仓库的 Issue 系统中，每篇博文会自动创建一个 Issue，默认使用博文中的标题 <code>title</code> 作为 Issue 的标题，也可以自定义 <code>vssue-title</code>。
+Vssue 默认根据 Vuepress 的 <code>$lang</code> 参数来确定使用的语言。</p> <h3 id="针对每篇文章单独配置"><a href="#针对每篇文章单独配置" aria-hidden="true" class="header-anchor">#</a> 针对每篇文章单独配置</h3> <p>如果你博文的标题可能会有变动，建议你在 frontmatter 中加入一条 <code>vssue-title</code> 来作为 Issue 固定的标题，避免因为后续改动博文标题而引发问题：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token hr punctuation">---</span>
+category: hello
+tags:
+  <span class="token list punctuation">-</span> world
+date: 2019-06-23
+title: Hello, world!
+<span class="token title important">vssue-title: 固定的 Issue 标题
+<span class="token punctuation">---</span></span>
+
+这是第一篇博文。
+</code></pre></div><p>如果你想要手动创建 Issue，那么你需要在 frontmatter 中设置 <code>vssue-id</code>，来对应 Issue 的 ID ：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token hr punctuation">---</span>
+category: hello
+tags:
+  <span class="token list punctuation">-</span> world
+date: 2019-06-23
+title: Hello, world!
+<span class="token title important">vssue-id: 1
+<span class="token punctuation">---</span></span>
+
+这是第一篇博文。
+</code></pre></div><p>如果你想要关闭某篇博文下的评论，在 frontmatter 中设置 <code>vssue: false</code> 即可：</p> <div class="language-md extra-class"><pre class="language-md"><code><span class="token hr punctuation">---</span>
+category: hello
+tags:
+  <span class="token list punctuation">-</span> world
+date: 2019-01-21
+title: Hello, world!
+<span class="token title important">vssue: false
+<span class="token punctuation">---</span></span>
+
+这是第一篇博文。
+</code></pre></div><h3 id="完全禁用评论"><a href="#完全禁用评论" aria-hidden="true" class="header-anchor">#</a> 完全禁用评论</h3> <p>当然，如果你不想让你的博客拥有评论功能，你可以完全禁用它：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 主题配置</span>
+  themeConfig<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 评论配置</span>
+    comments<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="部署到-github-pages"><a href="#部署到-github-pages" aria-hidden="true" class="header-anchor">#</a> 部署到 GitHub Pages</h2> <p><a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 可以在你的每一个分支分配一个 <code>URL</code> ，将页面放在 <code>docs</code> 并将页面 push 到该分支后即可访问到。</p> <h3 id="项目设置"><a href="#项目设置" aria-hidden="true" class="header-anchor">#</a> 项目设置</h3> <p>在 <code>docs/.vuepress/config.js</code> 中设置正确的 <code>base</code> 。</p> <div class="language-js extra-class"><pre class="language-js"><code> base<span class="token punctuation">:</span><span class="token string">'/&lt;REPO&gt;/'</span><span class="token punctuation">,</span>
+</code></pre></div><blockquote><p>如果你打算发布到 <code>https://&lt;USERNAME&gt;.github.io/</code> ，则可以省略这一步，因为 <code>base</code> 默认即是 <code>&quot;/&quot;</code> 。<br>
+如果你打算发布到 <code>https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;/</code> （也就是说你的仓库在 <code>https://github.com/&lt;USERNAME&gt;/&lt;REPO&gt;</code>） ，则将 <code> base</code> 设置为 <code>&quot;/&lt;REPO&gt;/&quot;</code> 。</p></blockquote> <h3 id="写发布脚本"><a href="#写发布脚本" aria-hidden="true" class="header-anchor">#</a> 写发布脚本</h3> <p>在你的项目根路径中，创建一个如下的 <code>deploy.sh</code> 脚本（请自行判断去掉注释）:</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#!/usr/bin/env sh</span>
+
+<span class="token comment"># 确保脚本抛出遇到的错误</span>
+<span class="token keyword">set</span> -e
+
+<span class="token comment"># 生成静态文件</span>
+<span class="token function">npm</span> run docs:build
+
+<span class="token comment"># 进入生成的文件夹</span>
+<span class="token function">cd</span> docs/.vuepress/dist
+
+<span class="token comment"># 如果是发布到自定义域名</span>
+<span class="token comment"># echo 'www.example.com' &gt; CNAME</span>
+
+<span class="token function">git</span> init
+<span class="token function">git</span> <span class="token function">add</span> -A
+<span class="token function">git</span> commit -m <span class="token string">'deploy'</span>
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io</span>
+<span class="token comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git master</span>
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;</span>
+<span class="token comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages</span>
+
+<span class="token function">cd</span> -
+</code></pre></div><h3 id="执行脚本"><a href="#执行脚本" aria-hidden="true" class="header-anchor">#</a> 执行脚本</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>sh deploy.sh <span class="token operator">|</span><span class="token function">tee</span> deploy.log 
+</code></pre></div><h3 id="浏览器查看结果"><a href="#浏览器查看结果" aria-hidden="true" class="header-anchor">#</a> 浏览器查看结果</h3> <h1 id="感谢你能看到这里"><a href="#感谢你能看到这里" aria-hidden="true" class="header-anchor">#</a> 感谢你能看到这里</h1> <blockquote><p>更多细节和功能可以查看 <a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer">VuPress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 和 <a href="https://vuepress-theme-meteorlxy.meteorlxy.cn/" target="_blank" rel="noopener noreferrer">vuepress-theme-meteorlxy<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2019-06-23
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/my-blog/posts/2019/06/22/posts.html" class="post-link" data-v-4e23451f>
+      上一篇 : 第一篇技术博客上的非技术文章
+    </a> <a href="/my-blog/posts/2019/06/30/_30-cssbasenote.html" class="post-link" data-v-4e23451f>
+      下一篇 : CSS 基础知识
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-6cd81e6a><div class="info-card main-div" data-v-3da8ff8d data-v-6cd81e6a><div class="info-card-header" data-v-3da8ff8d><img src="https://tvax2.sinaimg.cn/crop.0.0.888.888.180/bc7200ffly8fvybwevj1xj20oo0oo74u.jpg" alt="Fibonaccci" class="info-avatar" data-v-3da8ff8d></div> <div class="info-card-body" data-v-3da8ff8d><section class="info-nickname" data-v-3da8ff8d>
+      Fibonaccci
+    </section> <section class="info-desc" data-v-3da8ff8d>「 Not Single But Solo. 」</section> <section class="info-contact" data-v-3da8ff8d><section data-v-3da8ff8d><span title="Beijing, China" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Beijing, China</title><use xlink:href="#icon-location" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          Beijing, China
+        </span></span></section> <section data-v-3da8ff8d><span title="HuBei University" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>HuBei University</title><use xlink:href="#icon-organization" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          HuBei University
+        </span></span></section> <section data-v-3da8ff8d><a href="mailto:dongfei12345@hotmail.com" title="dongfei12345@hotmail.com" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>dongfei12345@hotmail.com</title><use xlink:href="#icon-email" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          dongfei12345@hotmail.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-3da8ff8d><section class="info-sns clearfix" data-v-3da8ff8d><a href="https://github.com/Fibonaccci" target="_blank" class="sns-link" data-v-3da8ff8d><span title="GitHub: Fibonaccci" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>GitHub: Fibonaccci</title><use xlink:href="#icon-github" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a><a href="https://weibo.com/u/3161587967" target="_blank" class="sns-link" data-v-3da8ff8d><span title="新浪微博: @董_斐" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>新浪微博: @董_斐</title><use xlink:href="#icon-weibo" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6cd81e6a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#什么是-vuepress-？">什么是 VuePress ？</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#搭建前准备">搭建前准备</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#搭建你的项目">搭建你的项目</a><ul><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#新建项目、安装">新建项目、安装</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#配置主题">配置主题</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#写第一篇博客">写第一篇博客</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#调试运行">调试运行</a></li></ul></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#使用评论功能">使用评论功能</a><ul><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#配置评论">配置评论</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#针对每篇文章单独配置">针对每篇文章单独配置</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#完全禁用评论">完全禁用评论</a></li></ul></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#部署到-github-pages">部署到 GitHub Pages</a><ul><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#项目设置">项目设置</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#写发布脚本">写发布脚本</a></li><li><a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#执行脚本">执行脚本</a></li></ul></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/my-blog/posts/2019/06/23/howtodowithvuepress.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1114308c><p class="sns-links" data-v-1114308c><a href="https://github.com/Fibonaccci" target="_blank" class="sns-link" data-v-1114308c><span title="GitHub: Fibonaccci" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>GitHub: Fibonaccci</title><use xlink:href="#icon-github" data-v-1114308c data-v-1114308c></use></svg></span></a><a href="https://weibo.com/u/3161587967" target="_blank" class="sns-link" data-v-1114308c><span title="新浪微博: @董_斐" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>新浪微博: @董_斐</title><use xlink:href="#icon-weibo" data-v-1114308c data-v-1114308c></use></svg></span></a></p> <p data-v-1114308c><span data-v-1114308c>Powered by </span> <a href="https://vuepress.vuejs.org" target="_blank" data-v-1114308c>
+      Vuepress
+    </a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/my-blog/assets/js/app.e20c6566.js" defer></script><script src="/my-blog/assets/js/6.35f30039.js" defer></script><script src="/my-blog/assets/js/14.430b5071.js" defer></script>
+  </body>
+</html>
